@@ -3,21 +3,23 @@
 #include <stdio.h>
 #include "../tempo.h"
 
+#define searchValue 10
+
 int alimentaVETAleatorio(int *v, int t) {
 
 	int i;
-	int MAX = 20000000; // seria de -20000000 a 20000000
+	int range = 100000;
 	
 	for (i = 0; i < t; i++) {
-		v[i] = (rand() % (MAX+MAX)) - MAX;
+		v[i] = (rand() % (range+range)) - range;
 	}
 	return(i);
 
 }
 
-int sequencial(int n) {
+int sequencial(int n) {
 	if (n < 0) return -1;
-	return n > 0 ? n + sequencial(--n) : 0;
+  return n > 0 ? n + sequencial(--n) : 0;
 }
 
 int ordenaDados(int *v, int tam) {
@@ -39,16 +41,20 @@ int buscaSequencialValor(int *vetor, int tam, int valor) {
 	int i;
 	int intervalo;
 
-	tempo();
+  tempo();
 
 	for ( i = 0 ; i < tam ; i++ ) {
 		if ( vetor[i] == valor ) {
-	       intervalo = tempo;
+         intervalo = tempo();
+         fprintf(stdout, "Encontrou o valor em: ");
+         fprintf(stdout, formata(intervalo));
 	       return sequencial(valor);
 		}
 	}
 
-	intervalo = tempo;
+  intervalo = tempo();
+  fprintf(stdout, "Nao encontrou o valor em: ");
+  fprintf(stdout, formata(intervalo));
 	return NULL;
 
 }
@@ -58,12 +64,9 @@ int main(int argc, char *argv[])  {
 	
 	int *vetor;
 	int tam;
-	int valor = 10; /* Depois usar um rand (valor aleatório) 
-					   DICA: para pegar um valor não existente no vetor,
-					   basta procurar por um valor fora do range da funcao "geraVetAleatorio"
-					*/
-	
-	if (argc!=2){
+	int valor = searchValue;
+
+	if (argc != 2){
 		fprintf(stderr, "Erro. Precisa passar o tamanho do vetor\n");
 		return(1);
 	}

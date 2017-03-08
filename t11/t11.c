@@ -1,7 +1,9 @@
-#define WINDOWS // ou LINUX
+#define LINUX // WINDOWS ou LINUX
 #include <stdlib.h>
-#include <tempo.h>
-int alimentaVETAleatorio (int *v, int t) {
+#include <stdio.h>
+#include "../tempo.h"
+
+int alimentaVETAleatorio(int *v, int t) {
 
 	int i;
 	int MAX = 20000000; // seria de -20000000 a 20000000
@@ -15,27 +17,21 @@ int alimentaVETAleatorio (int *v, int t) {
 
 int sequencial(int n) {
 	if (n < 0) return -1;
-	return n > 0 ? n + sequencial(n­1) : 0;
+	return n > 0 ? n + sequencial(--n) : 0;
 }
 
-int ordenaDados(int *v[], int tam) {
-
-	int i, j, min, temp;
-
-	for( i = 0 ; i < tam - 1 ; ++i ) {
-
-		min = i; /*minimo sempre irá receber o valor da vez, e após checar sempre o mínimo de acordo com as anteriores*/
-		for ( j = i + 1 ; j < n ; ++j ) {
-
-        	if ( v[j] < v[min] ) {
-        		min = j;
-        	}  
-
-	    	x = v[i];
-	    	v[i] = v[min];
-	    	v[min] = x;
-	    }
-	}
+int ordenaDados(int *v, int tam) {
+  int i, j, x;
+ 
+  for (i = 0 ; i < ( tam - 1 ); i++) {
+    for (j = 0 ; j < tam - i - 1; j++) {
+      if (v[j] > v[j+1]) {
+        x      = v[j];
+        v[j]   = v[j+1];
+        v[j+1] = x;
+      }
+    }
+  }
 }
 
 int buscaSequencialValor(int *vetor, int tam, int valor) {
@@ -44,7 +40,7 @@ int buscaSequencialValor(int *vetor, int tam, int valor) {
 	int intervalo;
 
 	tempo();
-	// busca o valor que tu quer
+
 	for ( i = 0 ; i < tam ; i++ ) {
 		if ( vetor[i] == valor ) {
 	       intervalo = tempo;
@@ -55,11 +51,6 @@ int buscaSequencialValor(int *vetor, int tam, int valor) {
 	intervalo = tempo;
 	return NULL;
 
-	/* 
-	Medir o tempo quando:
-	1) busca de um valor aleatório que existe
-	2) busca de um valor inexistente
-	*/
 }
 
 
@@ -87,11 +78,11 @@ int main(int argc, char *argv[])  {
 
 	srand(time(NULL));
 
-	alimentaVETAleatorio(&vetor, tam);
+	alimentaVETAleatorio(vetor, tam);
 
-	ordenaDados(&vetor, tam);
+	ordenaDados(vetor, tam);
 
-	buscaSequencialValor(&vetor, tam, valor);
+	buscaSequencialValor(vetor, tam, valor);
 
 	free(vetor);
 }

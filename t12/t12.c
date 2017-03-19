@@ -1,11 +1,7 @@
-#define LINUX // WINDOWS ou LINUX
+#define WINDOWS // WINDOWS ou LINUX
 #include <stdlib.h>
 #include <stdio.h>
 #include "../tempo.h"
-
-int valorAleatorioExistente(int tamVetor) {
-  return rand() % tamVetor;
-}
 
 int alimentaVETOrdenado(int *v, int t) {
 
@@ -20,44 +16,15 @@ int alimentaVETOrdenado(int *v, int t) {
 
 int buscaSequencialValor(int *vetor, int tam, int valor) {
 
-	int i;
-	int intervalo;
+  int i;
+  int intervalo;
 
   tempo();
-
-	for ( i = 0 ; i < tam ; i++ ) {
-		if ( vetor[i] == valor ) {
-         intervalo = tempo();
-         fprintf(stdout, "Encontrou o valor em: ");
-         fprintf(stdout, formata(intervalo));
-	       return valor;
-		}
-	}
-
-  intervalo = tempo();
-  fprintf(stdout, "Nao encontrou o valor em: ");
-  fprintf(stdout, formata(intervalo));
-	return NULL;
-
-}
-
-int forRecursivo(int *vetor, int valor, int index) {
-    return vetor[index] == valor ? valor : forRecursivo(vetor, valor, ++index);
-}
-
-int buscaBinariaRecursiva(int *vetor, int tam, int valor) {
-
-	int i;
-	int intervalo;
-
-  tempo();
-
-  forRecursivo(vetor, valor, 0);
 
 	for ( i = 0 ; i < tam ; i++ ) {
 		if ( vetor[i] == valor ) {
       intervalo = tempo();
-      fprintf(stdout, "Encontrou o valor em: ");
+      fprintf(stdout, "Encontrou o valor %i em: ", valor);
       fprintf(stdout, formata(intervalo));
 	    return valor;
 		}
@@ -70,12 +37,50 @@ int buscaBinariaRecursiva(int *vetor, int tam, int valor) {
 
 }
 
+int recursiva(int *vetor, int valor, int inicio, int fim) {
+	int metade = (inicio + fim) / 2;
+	printf("\n%i\n", metade);
+	if (vetor[metade] != valor) {
+		if (valor > vetor[metade]) {
+			if (vetor[metade + 1])
+				return recursiva(vetor, valor, metade + 1, fim);
+				return NULL;
+		} else {
+			if (vetor[metade - 1])
+			  return recursiva(vetor, valor, inicio, metade - 1);
+   			return NULL;
+		}
+	}
+	return valor;
+}
+
+int buscaBinariaRecursiva(int *vetor, int tam, int valor) {
+
+  int i, intervalo, result;
+
+  tempo();
+
+  result = recursiva(vetor, valor, 0, tam);
+
+  if ( result == valor ) {
+    intervalo = tempo();
+    fprintf(stdout, "Encontrou o valor %i em: ", valor);
+    fprintf(stdout, formata(intervalo));
+    return valor;
+  }
+
+  intervalo = tempo();
+  fprintf(stdout, "Não encontrou o valor em: ");
+  fprintf(stdout, formata(intervalo));
+	return NULL;
+
+}
+
 
 int main(int argc, char *argv[])  {
 	
 	int *vetor;
 	int tam;
-	int valor = searchValue;
 
 	if (argc != 2){
 		fprintf(stderr, "Erro. Precisa passar o tamanho do vetor\n");
@@ -94,6 +99,8 @@ int main(int argc, char *argv[])  {
 
 	alimentaVETOrdenado(vetor, tam);
 
+	int valorAleatorioExistente = rand() % tam;
+
   fprintf(stdout, "Busca sequencial de um valor aleatorio existente: \n");
 	buscaSequencialValor(vetor, tam, valorAleatorioExistente);
 
@@ -104,4 +111,6 @@ int main(int argc, char *argv[])  {
   buscaBinariaRecursiva(vetor, tam, valorAleatorioExistente);
 
 	free(vetor);
+
+	return(0);
 }

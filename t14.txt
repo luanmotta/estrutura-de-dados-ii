@@ -1,0 +1,66 @@
+Luan Motta
+
+1) Apesar de ser um mecanismo de busca mais rápido do que o sequencial, a busca binária precisa
+de um vetor ordenado para ser executada, algo que não é necessário para a busca sequencial.
+
+
+2)
+ 
+a.
+N = 10 {
+Algoritmo A: 100uS
+Algoritmo B: 15970uS
+Algoritmo C: 707570,6842uS
+
+Algoritmo A é o mais rápido.
+}
+
+N = 100 {
+Algoritmo A: 10000uS
+Algoritmo B: 159700uS
+Algoritmo C: 1415141,3684uS
+
+Algoritmo A é o mais rápido.
+}
+
+N = 1000 {
+Algoritmo A: 1000000uS
+Algoritmo B: 1597000uS
+Algoritmo C: 2122712,0526uS
+
+Algoritmo A é o mais rápido.
+}
+
+N = 10000 {
+Algoritmo A: 100000000uS
+Algoritmo B: 15970000uS
+Algoritmo C: 2830282,7368uS
+
+Algoritmo C é o mais rápido.
+}
+
+
+
+b.
+Algoritmo A é o mais rápido até N = 1597
+1597(n) = (n²) * 1
+1597(n) = (n²)
+1597 = (n²)/n
+1597 = n * n / n
+1597 = n
+
+
+Algoritmo B é o mais rápido até N = 
+1597(n) = 213000(log²n)
+n = 123000/1597(log²n)
+n = 77,0194(log²n)
+n / (log²n) = 77,0194
+
+
+
+
+
+
+
+3)
+

@@ -1,4 +1,4 @@
-Luan Motta
+Nome: Luan Motta
 
 1) Apesar de ser um mecanismo de busca mais rápido do que o sequencial, a busca binária precisa
 de um vetor ordenado para ser executada, algo que não é necessário para a busca sequencial.
@@ -55,7 +55,7 @@ Algoritmo B é o mais rápido até N =
 n = 123000/1597(log²n)
 n = 77,0194(log²n)
 n / (log²n) = 77,0194
-
+?
 
 
 
@@ -63,4 +63,5 @@ n / (log²n) = 77,0194
 
 
 3)
-
+O Insert Sort é o método de ordenamento de menor complexidade entre os demais
+quando o vetor já está ordenado.

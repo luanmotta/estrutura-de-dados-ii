@@ -1,0 +1,50 @@
+// t16 
+começar o array pelo fim a complexidade é 1.
+
+
+
+Definição do Exercício T16
+Data: 04/Abril/2017
+Pode ser feito em TRIOS
+(desde que iniciados em aula)
+
+1. Analise a terceira versão de busca sequencial apresentada (com sentinela). Qual a complexidade
+mínima e máxima dela? Em termos de complexidade ela é melhor que as demais? E em termos
+de tempo de execução? Explique.
+
+2. Sabe­se que o Quick Sort tem um desempenho péssimo quando a escolha do pivô é sempre a
+pior possível. Seu colega fez uma implementação do QuickSort. Nesta implementação  ele
+resolveu escolher o elemento central do vetor como pivô. Para um vetor com 10 posições (de
+v[0] a v[9]) o elemento central será o v[5] que deveria dividir o vetor em duas partes quase
+iguais, se for a escolha certa do pivo (quase iguais porque com 10 elementos um vetor terá
+cinco elementos  e o outro terá  quatro elementos, com o pivô dividindo­os). Você  decidiu
+sacanear seu amigo e provar que o QuickSort é mais lento que até mesmo o Insert Sort. Prepare
+um vetor com 10 elementos que comprovaria a sua tese.
+
+3. Seu amigo é insistente. Mudou a escolha do pivô para o primeiro elemento. E agora? Com qual
+vetor você provaria sua tese?
+
+4. Corrija a escolha do pivô do seu amigo no algoritmo da questão 2 para que não seja possível
+boicotar. Comente.
+
+5. Você precisa fazer um programa para manipular uma matriz NxN elementos. Cada posição de
+todas as colunas de linhas pares devem ser atualizadas para o dobro do que tinha. Cada posição
+de todas as colunas ímpares deve ser atualizada para a metade do que tinha (divisão inteira sem
+resto. 15/4=3, não 3,75 pois a matriz é de inteiros. Não é divisão com arredondamento). Faça
+esta função pensando em como otimizá­la ao máximo. Procure também fazer uma versão meia
+boca, típica de estudantes que ainda estão aprendendo algoritmos e compare a sua com esta.
+Qual a complexidade para o pior e melhor caso? Entregue os dois algoritmos, junto com um
+main de teste, no sistema de envio de exercícios como T15­5.
+
+
+Respostas:
+1)  No melhor dos casos complexidade 1, no pior, n. Comparando com a buscaLinearPerfeita (best), ela tem uma etapa a menos de validação, pois não tem o if (condicional) no corpo da função (laço).
+
+2) [5,4,3,2,1,0,1,2,3,4], começamos dificultando pois na hora de gerar subvetores com o pivo sendo 0, o algoritmo jogara o pivo para o canto esquerdo, significando que não houve divisão eficiente. 
+Além do mais um quick sort é ruim para vetores pequenos.
+
+3) [0,1,2,3,4,5,6,7,8,9], sempre induzindo nosso coleguinha a escolher o pior pivô, aquele que não divide o vetor de forma eficiente.
+
+4) Nós pegaríamos a média entre os 3 valores do meio, para tentar fazer um corte que subdivida bem os vetores.
+
+5) À fazer.

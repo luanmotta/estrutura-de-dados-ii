@@ -1,0 +1,50 @@
+Exercício T17
+
+1) Quais árvores são binárias e quais são estritamente binárias (justifique porque elas são e porque as outras não são)
+	
+	Árvore 1 - É uma árvore estritamente binária. Pois todos os nós (menos os folhas), possuem exatamente dois filhos.
+	Árvore 2 - Não é uma árvore binária. Pois o nó "B" contém mais de dois filhos.
+	Árvore 3 - É uma árvore binária, porém não é uma estritamente binária. Pois contém nós que contém apenas um filho.
+	Árvore 4 - É uma árvore estritamente binária. Pois todos os nós que não são folhas possuem dois filhos.
+
+
+2) Qual o grau de saída de cada nó da árvore 2? E qual o grau de saída da árvore?
+
+	[A] - Grau de Saída: 3.
+
+	[B] - Grau de Saída: 5.
+
+	[C] - Grau de Saída: 0.
+
+	[D] - Grau de Saída: 0.
+
+	[E] - Grau de Saída: 0.
+
+	[F] - Grau de Saída: 0.
+
+	[G] - Grau de Saída: 0.
+
+	[H] - Grau de Saída: 0.
+
+	[I] - Grau de Saída: 1.
+
+	[J] - Grau de Saída: 0.
+
+	Grau de Saída da Árvore: 5.
+
+3) Alguma(s) árvore(s) podem ser consideradas como completas ou quase completas? Justifique
+
+	Uma árvore pode ser considerada tanto como completa (Cheia) ou quase completa, para ser considerada
+	como completa, a mesma precisa ter todos os seus nós que não são folhas, com a quantidade máxima de 
+	filhos, e também, precisa-se que todos os nós folhas se encontrem no mesmo nível.
+	Já para uma árvore ser considerada como quase completa, essa árvore estará em busca de se tornar uma
+	árvore completa, mas não é possível pois ela não contém a quantidade necessária de nós. 
+
+4) Uma árvore binária completa de profundidade P, tem quantos nós ao todo? E quantos folhas?
+	// A fazer
+
+5) Nas árvores binárias (as que você determinou na questão 1) mostre o percurso em ordem, pré-ordem e
+pós-ordem.
+	// A fazer
+
+	

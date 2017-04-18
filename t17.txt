@@ -1,0 +1,72 @@
+Felipe Alves, Jean Bauer, Luan Motta
+
+1)
+
+Árvore 1: É uma árvore binária, pois todos os nós possuem dois ou apenas 1 filho, mas
+não é estritamente binária porque para isto, todos nós deveriam ter dois e somente dois filhos (algo que não acontece com os nós 900 e 970), portanto, esta árvore é binária mas não estritamente binária.
+
+Árvore 2: Não é uma árvore binária e muito menos estritamente binária, pois o nó B possui 5 folhas.
+
+Árvore 3: É uma árvore binária, porém não é estritamente binária, pelos mesmos motivos da árvore 1.
+
+Árovre 4: É uma árvore binária e estritaente binária, visto que todos os nós possuem 2 e somente dois filhos cada.
+
+
+
+2)
+
+O grau de saída de um nó quantidade de filhos que o mesmo tem.
+O grau de saída de uma árvore é a quantidade de filhos que o nó com mais filhos possui.
+
+Graus de saída dos nós:
+
+A: 3
+B: 5
+C: 0
+D: 0
+E: 0
+F: 0
+G: 0
+H: 0
+I: 1
+J: 0
+
+Grau de saída da árvore: 5
+
+3)
+
+Nenhuma das árvores podem ser consideradas quase completas ou completas, pois não satisfazem os requisitos para tal feito.
+
+Isto porque uma árvore completa é aquela árvore que todos os nós possuem o grau de saída igual o da árvore e todos os folhas pertencem ao mesmo nível profundidade.
+
+A árvore quase completa não precisa de que todos os folhas estejam no mesmo nível, todavia é preciso de que todos os folhas estejam em ordem da direita para esquerda.
+
+Logo, nas árvores observadas, as mais próximas de cumprir alguns requisitos são as árvores 1 e 4.
+
+Na árvore 1, se o folha 920 fosse filho do 970, ela seria uma árvore quase completa, pois todos os folhas estariam ordenados da direita para esquerda, além de tornar ela uma árvore estritamente binária.
+
+Ná árvore 4, se o nó 20 não tivesse filhos, a árvore seria completa, pois todos os folhas estariam no mesmo nível, além de todos os nós possuirem o grau máximo de saída da árvore. Por outro lado, ao invés de serem filhos do nó 20, se os folhas 10 e 22 fossem filhos do nó 95 teríamos uma árvore quase completa, pois ela tende a ficar cheia da direita para a equerda.
+
+
+4)
+
+Uma árvore binária completa de profundidade P possui P² nós ao todo, e possui P² - (P - 1)² folhas.
+
+5)
+
+Árvore 1:
+Em-Ordem: 230, 320, 300, 600, 900, 920, 950, 970, 980
+Pré-Ordem: 600, 300, 230, 320, 950, 900, 920, 970, 980
+Pós-Orem: 230, 320, 300, 920, 900, 980, 970, 950, 600
+
+
+Árvore 3:
+Em-Ordem: 25, 28, 30, 32, 35, 40, 50, 55, 60, 65, 68, 70, 80, 85, 90, 100, 120, 130, 200
+Pré-Ordem: 50, 35, 25, 30, 28, 32, 40, 60, 55, 65, 80, 70, 68, 100, 90, 85, 120, 130, 200
+Pós-Orem: 28, 32, 30, 25, 40, 35, 55, 68, 70, 85, 90, 200, 130, 120, 100, 80, 65, 60, 50
+
+Árvore 4:
+Em-Ordem: 10, 20, 22, 25, 30, 35, 38, 40, 55, 50, 58, 60, 66, 80, 56, 90, 95
+Pré-Ordem: 50, 35, 25, 20, 10, 22, 30, 40, 38, 55, 80, 60, 58, 66, 90, 56, 95
+Pós-Orem: 10, 22, 20, 30, 25, 38, 55, 40, 35, 58, 66, 60, 56, 95, 90, 80, 50
+

@@ -1,0 +1,14 @@
+Estruturas de Dados II - T21
+
+Nomes: Felipe Silva, Luan Motta.
+
+1) Considere uma árvore binária de busca vazia. Monte graficamente a árvore realizando as seguintes operações:
+Inserção de 30, 10,  20,  15, 5, 7, 200, 400, 1300, 150, 445, 36, 3, 2, 1, 0, 1000, 500, 400, 60, 470, 580.
+
+a. Quantos passos, no máximo, será necessário para buscar um valor inexistente nesta árvore? 
+- Para a busca de um valor inexistente nessa árvore, será no máximo necessário 9 passos.
+
+b. Qual o percurso em ordem, Pré-Ordem e Pós-Ordem?
+Percurso Em Ordem:  0, 1, 2, 3, 5, 7, 10, 15, 20, 30, 36, 60, 150, 200, 400, 445, 470, 500, 580, 1000, 1300.
+Percurso Pré-Ordem: 30, 10, 5, 3, 2, 1, 0, 7, 20, 15, 200, 150, 36, 60, 400, 1300, 445, 1000, 500, 470, 580.
+Percurso Pós-Ordem: 0, 1, 2, 3, 7, 5, 15, 20, 10, 60, 36, 150, 470, 580, 500, 1000, 445, 1300, 400, 200, 30.
